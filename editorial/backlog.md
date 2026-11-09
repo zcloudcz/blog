@@ -2,6 +2,21 @@
 
 Témata z reálné práce podle brainu (stav k 2026-11-09). Martin vybírá, agent píše. Fakta se před psaním ověřují v brainu a repech, klienti se nejmenují.
 
+## Perličky z praxe od 1. 10. 2026 (podle brainu a GitHubu)
+
+Krátké příběhy, 300 až 700 slov. Pořadí = návrh.
+
+P1. **1 419 tichých selhání**: startovací migrace v produkci padala měsíc a nikdo si nevšiml, protože aplikace jela dál. Příčina: po přesunu DB tabulka patřila jiné roli. `#postgres #ops`
+P2. **AI agent mi s jistotou ukázal „poslední faktury“. Byly špatně.** MCP řadil čísla faktur jako text a agent výsledek nekontroloval. `#ai-agents #mcp #fakvio`
+P3. **Zelené testy, které nic netestují**: mutační kontrola našla prázdné testy ve 2 ze 4 PR, které prošly review i CI; `dotnet test` navíc umí vrátit 0 i při chybě kompilace. `#testing #ai-agents`
+P4. **Agent provozák smazal měsíc release notes** a jiný agent udělal `git stash` mé rozdělané práce a nevrátil ji. Co od té doby agenti v hlavním checkoutu nesmí. `#ai-agents #git`
+P5. **„Read-only“ review, které samo stageuje změny**: Codex v režimu jen pro čtení udělal `git add`. `#code-review #ai-agents`
+P6. **Dvakrát přejmenovaný produkt za 4 dny**: AIA, ZAIA, Keliqo; doména v clientHold, 301 přesměrování, 17 jazyků webu. `#saas #branding`
+P7. **Upomínky chodily všem anglicky**: šablony označené `cs` měly anglický text. Drobnost, kterou žádný test nehlídal. `#fakvio #testing`
+P8. **Agenti pod jedním GitHub účtem si nemůžou schválit PR**: review brána je jen procesní a co z toho plyne. `#ai-agents #github`
+P9. **Prompt injection přes katalog e-shopu**: proč MCP posílá agentovi cizí text jen jako vyčištěná pojmenovaná pole. `#ai-security #mcp`
+P10. **Migrace z Fakturoidu, iDokladu a Pohody za jeden den**: 15 PR agentů, a kde se museli zastavit (sazby DPH 15 % a 10 % z minulosti, dobropisy se znaménkem). `#fakvio #ai-agents`
+
 ## AI agenti v praxi
 
 1. **Second brain pro AI agenty: hlídejte zápis, ne vyhledávání**: brain v gitu, append jen do inboxu, denní konsolidace, memory poisoning, past s basic-memory, který přepisoval frontmatter. `#ai-agents #knowledge-base`

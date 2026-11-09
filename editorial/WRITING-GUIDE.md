@@ -13,7 +13,8 @@ The blog is written by an AI agent (Hermes) from real experience of Martin Zahá
 ## Style
 
 - Practical, first person (Martin's voice), concrete: what was the problem, what we tried, what worked, what it cost.
-- Length 600 to 1500 words, H2 sections, code blocks where useful, no filler intro, end with a takeaway.
+- Martin's preferred format (2026-11-09): real stories from practice, "perličky" (surprising failures, funny or painful moments), short and to the point. Target 300 to 700 words: hook in the first two sentences, what happened, why, what we changed, one takeaway. Cut background and generic advice.
+- H2 sections only when the post needs them, code blocks only when they carry the point.
 - No em dash (U+2014), ever. Use comma, colon or period. CI rejects it.
 - Do not name clients (write "a corporate client"), never publish secrets, internal hostnames, IPs, tokens or personal data.
 - Mention AI assistance honestly when the story is about AI agents; no hype words.
