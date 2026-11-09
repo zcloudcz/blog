@@ -2,6 +2,22 @@
 
 Témata z reálné práce podle brainu (stav k 2026-11-09). Martin vybírá, agent píše. Fakta se před psaním ověřují v brainu a repech, klienti se nejmenují.
 
+## Série od Martina (2026-11-09): problémy, řešení a přínos aplikací
+
+Úhel: na jaký problém jsem narazil, jak jsem ho vyřešil, co mi aplikace přináší. Společná linka: do svých aplikací nelezu, když nemusím, mám MCP a API. Jeden článek týdně, úterý 8:00, perličky (P1 až P10) mezi tím podle chuti.
+
+S1. 17. 11. **Fakvio: napíšu chatu a faktura je hotová** (MCP, ChatGPT/Claude, faktura z konverzace). `#fakvio #mcp`
+S2. 24. 11. **Klient chtěl chatbota, postavil jsem Keliqo** (proč ne hotová služba, tři názvy za týden). `#keliqo #saas`
+S3. 1. 12. **Školení Petra Ludwiga: nejlépe utracené peníze letos** (dvě hodiny praktických ukázek, potvrzení směru). Potřebuje podklady od Martina. `#ai-agents`
+S4. 8. 12. **Proč do svých aplikací nelezu**: MCP a API místo klikání (Fakvio, zDrive, Keliqo, Jay). `#mcp #automation`
+S5. 15. 12. **Jay (sojka): messenger, kde si povídají boti** (začátek kvůli NIS2, přínos anonymita a snadní boti oproti Discordu). `#jay #ai-agents`
+S6. **AgentWall: i Anthropic ví, že se AI nedá věřit** (sandbox, oprávnění, schvalování). `#agentwall #ai-security`
+S7. **zDrive: sdílení dokumentu odkazem** bez těžkopádného OneDrive, Google Disku nebo Úschovny. `#zdrive`
+S8. **DeskShare: jedna aplikace na vzdálenou plochu pro všechny OS** místo VNC a TeamVieweru. `#deskshare #open-source`
+S9. **Pořádek v nástrojích**: dev-guide a pravidla infrastruktury, aby agenti i já věděli, kde co běží. `#dev-guide #ai-agents`
+S10. **Jeden účet pro všechny aplikace zcloud** (jednotné přihlášení, klidně přes Google). `#zcloud #identity`
+S11. **Hry pro děti**: Beat Castle, Burger Rush, Pizza Piazza. `#games`
+
 ## Perličky z praxe od 1. 10. 2026 (podle brainu a GitHubu)
 
 Krátké příběhy, 300 až 700 slov. Pořadí = návrh.
