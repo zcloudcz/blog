@@ -6,6 +6,11 @@ tags:
   - future-of-work
   - ai-agents
 linkedin: "https://cz.linkedin.com/posts/martin-zahalka_announcing-the-2025-dora-report-google-activity-7503013353653489664-GhFr"
+image: cover.png
+icon: users
+icons:
+  - brain-circuit
+  - code-xml
 ---
 
 The developer's job is gradually moving away from writing code itself and towards design, decision making and ownership of the final product. And the data is already showing that shift.
@@ -64,5 +69,3 @@ Code is getting cheaper. Decisions, accountability and the ability to deliver wo
 - [Anthropic Economic Index: AI's impact on software development](https://www.anthropic.com/research/impact-software-development)
 - [Stack Overflow Developer Survey 2025: AI](https://survey.stackoverflow.co/2025/ai)
 - [Google: Announcing the 2025 DORA Report](https://cloud.google.com/blog/products/ai-machine-learning/announcing-the-2025-dora-report)
-
-*Originally posted on [LinkedIn](https://cz.linkedin.com/posts/martin-zahalka_announcing-the-2025-dora-report-google-activity-7503013353653489664-GhFr) (in Czech).*

@@ -1,8 +1,10 @@
 {{ define "main" }}
-<h1 class="list-title">{{ i18n "tags" }}</h1>
-<ul class="tag-cloud">
-{{- range .Data.Terms.ByCount }}
-  <li><a class="tag" href="{{ .Page.RelPermalink }}">#{{ .Page.LinkTitle }}</a> <span class="muted">({{ .Count }})</span></li>
-{{- end }}
-</ul>
+<div class="wrap">
+  <div class="list-head"><h1>{{ i18n "allTags" }}</h1></div>
+  <ul class="tag-cloud">
+  {{- range .Data.Terms.ByCount }}
+    <li><a class="pill" href="{{ .Page.RelPermalink }}">{{ .Page.LinkTitle }} · {{ .Count }}</a></li>
+  {{- end }}
+  </ul>
+</div>
 {{ end }}

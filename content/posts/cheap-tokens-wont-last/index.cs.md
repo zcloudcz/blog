@@ -7,6 +7,11 @@ tags:
   - costs
   - ai-agents
 linkedin: "https://cz.linkedin.com/posts/martin-zahalka_ai-deepseek-llm-activity-7495743915434790912-5AE5"
+image: cover.png
+icon: coins
+icons:
+  - brain-circuit
+  - bot
 ---
 
 Platím za AI vývoj míň než za kafe. To nemůže vydržet. ☕
@@ -56,5 +61,3 @@ Cenová válka tedy evidentně začala. Otázka je, jestli to bude stačit. A hl
 Protože i když tokeny právě zlevňují, není vůbec jisté, že současné ceny jsou dlouhodobě udržitelné. Workflow, které počítá s tím, že nejsilnější model je levný na všechno, je sázka na jednu konkrétní cenovou politiku. Workflow postavené na malých úkolech a kontrole na každém kroku funguje s drahým i levným modelem.
 
 Stavíte svoje AI workflow na tom, že tokeny zůstanou levné?
-
-*Původně vyšlo na [LinkedInu](https://cz.linkedin.com/posts/martin-zahalka_ai-deepseek-llm-activity-7495743915434790912-5AE5).*

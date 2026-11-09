@@ -1,7 +1,7 @@
 {{- $title := cond .IsHome site.Title (printf "%s | %s" .Title site.Title) -}}
 {{- $desc := .Description | default .Summary | default site.Params.description | plainify | truncate 160 -}}
 {{- $image := site.Params.defaultImage -}}
-{{- with .Params.image }}{{ $image = . | absURL }}{{ end -}}
+{{- with .Resources.GetMatch (.Params.image | default "cover.*") }}{{ $image = .Permalink }}{{ end -}}
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>{{ $title }}</title>
@@ -26,6 +26,10 @@
 <meta property="og:title" content="{{ cond .IsHome site.Title .Title }}">
 <meta property="og:description" content="{{ $desc }}">
 <meta property="og:image" content="{{ $image }}">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:image" content="{{ $image }}">
+<link rel="preload" href="/fonts/inter-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
 <meta property="og:locale" content="{{ site.Params.locale }}">
 <meta name="twitter:card" content="summary_large_image">
 {{- if .IsPage }}
@@ -49,5 +53,5 @@
   | jsonify | safeJS }}
 </script>
 {{- end }}
-{{- $css := resources.Get "style.css" | minify | fingerprint }}
+{{- $css := resources.Get "main.css" | minify | fingerprint }}
 <link rel="stylesheet" href="{{ $css.RelPermalink }}" integrity="{{ $css.Data.Integrity }}">

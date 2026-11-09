@@ -7,6 +7,11 @@ tags:
   - web
   - open-source
 linkedin: "https://cz.linkedin.com/posts/martin-zahalka_pdfjoin-slou%C4%8Den%C3%AD-pdf-activity-7497925802747924498-aiez"
+image: cover.png
+icon: file-stack
+icons:
+  - lock-keyhole
+  - globe
 ---
 
 You need to quickly merge a few PDFs or images into a single PDF. Sound familiar?
@@ -43,5 +48,3 @@ One small lesson from development that might help anyone rendering PDFs with pdf
 ## Give it a try
 
 [pdf.zcloud.cz](https://pdf.zcloud.cz), it might come in handy. 🙂 Feedback welcome.
-
-*Originally posted on [LinkedIn](https://cz.linkedin.com/posts/martin-zahalka_pdfjoin-slou%C4%8Den%C3%AD-pdf-activity-7497925802747924498-aiez) (in Czech).*

@@ -8,6 +8,11 @@ tags:
   - agentwall
   - ai-agents
 linkedin: "https://cz.linkedin.com/posts/martin-zahalka_aiagents-aisecurity-mcp-activity-7507696043480731648-aQZp"
+image: cover.png
+icon: shield-check
+icons:
+  - lock-keyhole
+  - bot
 ---
 
 Všude se řeší bezpečnost AI agentů. Já na to jdu přes MCP firewall: [AgentWall](https://agentwall.cz).
@@ -38,5 +43,3 @@ Firewall sám nestačí, pokud vedle něj vede otevřená silnice. Přímé cest
 AgentWall přitom nestaví vlastní sandbox. Zapojí se do sandboxu, který klient už má (Claude Code `/sandbox`, sandbox v Codexu nebo Docker Sandboxes), a do jediné cesty ven postaví dva body vynucení: MCP gateway pro nástroje a egress proxy pro síť. Egress proxy navíc po DNS překladu blokuje privátní a interní adresy, takže se agent nedostane do vnitřní sítě ani přes povolenou doménu.
 
 **Bezpečnost agenta začíná tam, kde „nesmíš“ znamená „nemáš oprávnění“.**
-
-*Původně vyšlo na [LinkedInu](https://cz.linkedin.com/posts/martin-zahalka_aiagents-aisecurity-mcp-activity-7507696043480731648-aQZp).*

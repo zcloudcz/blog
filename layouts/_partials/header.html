@@ -2,8 +2,8 @@
 <header class="site-header">
   <div class="wrap header-inner">
     <a class="brand" href="{{ site.Home.RelPermalink }}">
-      <img src="/logo.png" alt="zcloud.cz" width="63" height="40">
-      <span>blog</span>
+      <span class="brand-mark"><img src="/logo.png" alt="" width="28" height="18"></span>
+      <span class="brand-name">zcloud.cz <span>/ blog</span></span>
     </a>
     <nav class="nav">
       <a href="{{ site.Home.RelPermalink }}">{{ i18n "posts" }}</a>
@@ -13,7 +13,7 @@
       {{- if not $target -}}
         {{- range site.Home.Translations }}{{ $target = .RelPermalink }}{{ end -}}
       {{- end }}
-      <a class="lang" href="{{ $target }}" hreflang="{{ cond (eq site.Language.Lang "cs") "en" "cs" }}">{{ i18n "otherLanguage" }}</a>
+      <a class="lang" href="{{ $target }}" hreflang="{{ cond (eq site.Language.Lang "cs") "en" "cs" }}">{{ cond (eq site.Language.Lang "cs") "EN" "CZ" }}</a>
     </nav>
   </div>
 </header>

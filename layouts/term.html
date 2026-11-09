@@ -1,6 +1,10 @@
 {{ define "main" }}
-<h1 class="list-title"><span class="muted">{{ i18n "taggedWith" }}:</span> #{{ .Title }}</h1>
-{{- $pager := .Paginate .Pages -}}
-{{- range $pager.Pages }}{{ partial "card.html" . }}{{ end }}
-{{ partial "pager.html" $pager }}
+<div class="wrap">
+  <div class="list-head"><span class="eyebrow">{{ i18n "taggedWith" }}</span><h1>{{ .Title }}</h1></div>
+  {{- $pager := .Paginate .Pages -}}
+  <div class="grid">
+    {{- range $pager.Pages }}{{ partial "card.html" (dict "page" .) }}{{ end }}
+  </div>
+  {{ partial "pager.html" $pager }}
+</div>
 {{ end }}

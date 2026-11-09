@@ -7,6 +7,11 @@ tags:
   - code-review
   - llm
 linkedin: "https://cz.linkedin.com/posts/martin-zahalka_m%C5%AFj-ai-developer-nesm%C3%AD-mergnout-nic-co-mu-activity-7495003995686752256-4WtZ"
+image: cover.png
+icon: git-pull-request-arrow
+icons:
+  - bot
+  - scale
 ---
 
 Můj AI developer nesmí mergnout nic, co mu neschválí AI od konkurence.
@@ -44,5 +49,3 @@ Je to vlastně totéž, co funguje v lidském týmu. Autor kódu není ten nejle
 ## A vy?
 
 Používáte cross-model review? Nebo necháváte AI kontrolovat samu sebe? A pokud jste dál, nasdílíte tipy, jak to děláte jinak?
-
-*Původně vyšlo na [LinkedInu](https://cz.linkedin.com/posts/martin-zahalka_m%C5%AFj-ai-developer-nesm%C3%AD-mergnout-nic-co-mu-activity-7495003995686752256-4WtZ).*

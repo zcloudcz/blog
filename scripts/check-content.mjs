@@ -7,7 +7,7 @@ import { join } from "node:path";
 const root = new URL("..", import.meta.url).pathname;
 const postsDir = join(root, "content", "posts");
 const LANGS = ["cs", "en"];
-const REQUIRED = ["title", "date", "description", "tags"];
+const REQUIRED = ["title", "date", "description", "tags", "image"];
 const EM_DASH = "\u2014";
 const errors = [];
 
@@ -45,6 +45,13 @@ for (const slug of readdirSync(postsDir)) {
     for (const k of REQUIRED) if (!fm[k] || fm[k] === "[]") errors.push(`${slug}/index.${lang}.md: missing "${k}"`);
     if (fm.description && fm.description.length > 170) errors.push(`${slug}/index.${lang}.md: description over 170 chars`);
     fms[lang] = fm;
+  }
+  const cover = join(dir, "cover.png");
+  if (!existsSync(cover)) errors.push(`${slug}: missing cover.png (run: node tools/cover/make-cover.mjs ${slug})`);
+  else {
+    const b = readFileSync(cover);
+    const w = b.readUInt32BE(16), h = b.readUInt32BE(20);
+    if (w !== 1200 || h !== 630) errors.push(`${slug}/cover.png must be 1200x630 (is ${w}x${h})`);
   }
   if (fms.cs && fms.en) {
     if (fms.cs.date !== fms.en.date) errors.push(`${slug}: cs and en must share the same date`);

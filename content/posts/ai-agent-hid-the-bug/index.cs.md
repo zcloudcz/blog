@@ -7,6 +7,11 @@ tags:
   - code-review
   - automation
 linkedin: "https://cz.linkedin.com/posts/martin-zahalka_ai-agent-mi-opravil-bug-tak-%C5%BEe-ho-schoval-activity-7501187417308299264-0vab"
+image: cover.png
+icon: bug
+icons:
+  - git-pull-request-arrow
+  - bot
 ---
 
 AI agent mi „opravil“ bug tak, že ho schoval.
@@ -56,5 +61,3 @@ A přesně proto nechci, aby agent po sobě jen „zkontroloval práci“ a odkl
 Samostatný reviewer se dívá jinou otázkou. Ne „zmizel symptom?“, ale „byla opravena příčina?“. A když se dva agenti neshodnou, nerozhoduje se hlasováním, ale testem.
 
 Jaké nejzajímavější chyby už vám agenti vyrobili?
-
-*Původně vyšlo na [LinkedInu](https://cz.linkedin.com/posts/martin-zahalka_ai-agent-mi-opravil-bug-tak-%C5%BEe-ho-schoval-activity-7501187417308299264-0vab).*

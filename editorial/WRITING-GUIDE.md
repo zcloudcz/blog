@@ -5,7 +5,7 @@ The blog is written by an AI agent (Hermes) from real experience of Martin Zahá
 ## Workflow
 
 1. **Topic**: pick from `editorial/backlog.md` or a topic Martin gives. Source material must be real: Martin's projects, decisions, incidents and lessons (brain, repos, chats). Never invent customers, numbers, quotes or results.
-2. **Draft**: branch `post/<slug>`, create `content/posts/<slug>/index.cs.md` and `index.en.md` (see README for front matter). Czech is the primary text, English is a natural rewrite, not a literal translation.
+2. **Draft**: branch `post/<slug>`, create `content/posts/<slug>/index.cs.md` and `index.en.md` (see README for front matter) and generate `cover.png` with `node tools/cover/make-cover.mjs <slug>` (pick fitting lucide icons). Czech is the primary text, English is a natural rewrite, not a literal translation.
 3. **Pull request** titled `Post: <cs title>` with: short summary, planned publish date, proposed LinkedIn post (cs + en) and what was left out on purpose. Open as draft PR.
 4. **Approval**: Martin approves in Discord (#pr) or by GitHub review. Only then mark ready and merge. Merge = published (or scheduled if `date` is in the future).
 5. **After publish**: update `editorial/linkedin-plan.md` (status, URL) and move the topic in `editorial/backlog.md` to Done.

@@ -22,7 +22,7 @@ Every post is a page bundle with both languages, same folder name (slug in Engli
 content/posts/<slug>/
   index.cs.md
   index.en.md
-  cover.png        # optional, referenced as image: cover.png
+  cover.png        # required, 1200x630: page hero, list thumbnail and og:image
 ```
 
 Front matter (both files, same `date`):
@@ -35,7 +35,9 @@ description: "One or two sentences, max 170 chars. Used in lists, search and og:
 tags:
   - ai-agents
   - dotnet
-# image: cover.png   # optional og:image, 1200x630
+image: cover.png
+icon: bug            # optional lucide icon name for the generated cover (lucide.dev/icons)
+icons: [git-pull-request-arrow, bot]   # optional two side icons
 # draft: true        # optional, never published
 ---
 ```
@@ -49,6 +51,17 @@ Rules (enforced by `node scripts/check-content.mjs` in CI):
 A future `date` = scheduled post: merged now, published by the daily build on that day.
 
 Editorial workflow for the AI agent (topics, approval, LinkedIn): see `editorial/WRITING-GUIDE.md`, `editorial/backlog.md` and `editorial/linkedin-plan.md`.
+
+## Cover images
+
+Every post needs `cover.png` (1200x630). Generate it from the post tags/icons:
+
+```bash
+cd tools/cover && npm ci && cd ../..
+node tools/cover/make-cover.mjs <slug>          # only missing covers; --force to regenerate
+```
+
+A hand-made or AI image works too: save it as `cover.png` at 1200x630. Hugo makes webp sizes for the page; the PNG is the og:image.
 
 ## Local preview
 

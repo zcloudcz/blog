@@ -1,6 +1,11 @@
 {{ define "main" }}
-<h1 class="list-title">{{ .Title }}</h1>
-{{- $pager := .Paginate .Pages -}}
-{{- range $pager.Pages }}{{ partial "card.html" . }}{{ else }}<p class="empty">{{ i18n "noPosts" }}</p>{{ end }}
-{{ partial "pager.html" $pager }}
+<div class="wrap">
+  <div class="list-head"><h1>{{ .Title }}</h1></div>
+  {{- $pager := .Paginate .Pages -}}
+  <div class="grid">
+    {{- range $pager.Pages }}{{ partial "card.html" (dict "page" .) }}{{ end }}
+  </div>
+  {{- if not $pager.Pages }}<p class="empty">{{ i18n "noPosts" }}</p>{{ end }}
+  {{ partial "pager.html" $pager }}
+</div>
 {{ end }}

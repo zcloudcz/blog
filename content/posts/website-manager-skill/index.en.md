@@ -8,6 +8,11 @@ tags:
   - automation
   - mcp
 linkedin: "https://cz.linkedin.com/posts/martin-zahalka_ai-agents-github-activity-7504116636375998465-zbY0"
+image: cover.png
+icon: globe
+icons:
+  - workflow
+  - bot
 ---
 
 I don't build websites. I'm not a designer. SEO bores me. And on top of that, I'm lazy.
@@ -48,5 +53,3 @@ No custom admin interface. No extra SaaS. Just an AI agent with access to the ri
 I like this idea more and more: instead of building yet another UI, some things can simply be exposed to an agent as a skill or an MCP server.
 
 An admin interface has to be designed, written, hosted and maintained. A skill is a description of the procedure plus a few tools the agent can call. For tasks I do a few times a year and don't want to remember where everything is configured, that is exactly the right level of investment.
-
-*Originally posted on [LinkedIn](https://cz.linkedin.com/posts/martin-zahalka_ai-agents-github-activity-7504116636375998465-zbY0) (in Czech).*

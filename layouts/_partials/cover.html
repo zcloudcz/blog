@@ -1,0 +1,12 @@
+{{- /* Responsive <img> for a post cover. Context: dict "page" "sizes" "class" "eager". */ -}}
+{{- $p := .page -}}
+{{- with $p.Resources.GetMatch ($p.Params.image | default "cover.*") -}}
+  {{- $s := .Resize "480x webp" -}}
+  {{- $m := .Resize "800x webp" -}}
+  {{- $l := .Resize "1200x webp" -}}
+  <img src="{{ $m.RelPermalink }}"
+       srcset="{{ $s.RelPermalink }} 480w, {{ $m.RelPermalink }} 800w, {{ $l.RelPermalink }} 1200w"
+       sizes="{{ $.sizes | default "100vw" }}"
+       width="{{ $l.Width }}" height="{{ $l.Height }}" alt=""
+       {{ if $.eager }}fetchpriority="high"{{ else }}loading="lazy"{{ end }} decoding="async">
+{{- end -}}
