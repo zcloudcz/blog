@@ -1,0 +1,53 @@
+{{- $title := cond .IsHome site.Title (printf "%s | %s" .Title site.Title) -}}
+{{- $desc := .Description | default .Summary | default site.Params.description | plainify | truncate 160 -}}
+{{- $image := site.Params.defaultImage -}}
+{{- with .Params.image }}{{ $image = . | absURL }}{{ end -}}
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>{{ $title }}</title>
+<meta name="description" content="{{ $desc }}">
+<link rel="canonical" href="{{ .Permalink }}">
+{{- if .IsTranslated }}
+<link rel="alternate" hreflang="{{ .Language.Lang }}" href="{{ .Permalink }}">
+{{- range .Translations }}
+<link rel="alternate" hreflang="{{ .Language.Lang }}" href="{{ .Permalink }}">
+{{- end }}
+{{- $default := .Permalink }}{{ range .AllTranslations }}{{ if eq .Language.Lang "cs" }}{{ $default = .Permalink }}{{ end }}{{ end }}
+<link rel="alternate" hreflang="x-default" href="{{ $default }}">
+{{- end }}
+<link rel="icon" href="/favicon.ico" sizes="16x16 32x32 48x48">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+{{- with .OutputFormats.Get "rss" }}
+<link rel="alternate" type="application/rss+xml" title="{{ site.Title }}" href="{{ .Permalink }}">
+{{- end }}
+<meta property="og:site_name" content="{{ site.Title }}">
+<meta property="og:type" content="{{ if .IsPage }}article{{ else }}website{{ end }}">
+<meta property="og:url" content="{{ .Permalink }}">
+<meta property="og:title" content="{{ cond .IsHome site.Title .Title }}">
+<meta property="og:description" content="{{ $desc }}">
+<meta property="og:image" content="{{ $image }}">
+<meta property="og:locale" content="{{ site.Params.locale }}">
+<meta name="twitter:card" content="summary_large_image">
+{{- if .IsPage }}
+<meta property="article:published_time" content="{{ .Date.Format "2006-01-02T15:04:05Z07:00" }}">
+{{- range .Params.tags }}
+<meta property="article:tag" content="{{ . }}">
+{{- end }}
+<script type="application/ld+json">
+{{- dict
+  "@context" "https://schema.org"
+  "@type" "BlogPosting"
+  "headline" .Title
+  "description" $desc
+  "datePublished" (.Date.Format "2006-01-02T15:04:05Z07:00")
+  "dateModified" (.Lastmod.Format "2006-01-02T15:04:05Z07:00")
+  "inLanguage" .Language.Lang
+  "url" .Permalink
+  "image" $image
+  "author" (dict "@type" "Person" "@id" "https://zahalka.dev/#person" "name" site.Params.author)
+  "publisher" (dict "@id" "https://zcloud.cz/#organization" "@type" "Organization" "name" "zcloud.cz")
+  | jsonify | safeJS }}
+</script>
+{{- end }}
+{{- $css := resources.Get "style.css" | minify | fingerprint }}
+<link rel="stylesheet" href="{{ $css.RelPermalink }}" integrity="{{ $css.Data.Integrity }}">

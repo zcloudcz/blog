@@ -1,0 +1,21 @@
+{{ define "main" }}
+<h1 class="list-title">{{ .Title }}</h1>
+<div id="search" class="search"></div>
+<noscript><p>JavaScript is required for search.</p></noscript>
+<link href="/pagefind/pagefind-ui.css" rel="stylesheet">
+<script src="/pagefind/pagefind-ui.js"></script>
+<script>
+  // Pagefind builds one index per <html lang>, so this page only searches posts in its own language.
+  window.addEventListener("DOMContentLoaded", function () {
+    var ui = new PagefindUI({
+      element: "#search",
+      showSubResults: true,
+      showImages: false,
+      resetStyles: false,
+      translations: { placeholder: {{ i18n "searchPlaceholder" }} }
+    });
+    var q = new URLSearchParams(location.search).get("q");
+    if (q) ui.triggerSearch(q);
+  });
+</script>
+{{ end }}

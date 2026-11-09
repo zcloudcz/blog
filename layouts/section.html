@@ -1,0 +1,6 @@
+{{ define "main" }}
+<h1 class="list-title">{{ .Title }}</h1>
+{{- $pager := .Paginate .Pages -}}
+{{- range $pager.Pages }}{{ partial "card.html" . }}{{ else }}<p class="empty">{{ i18n "noPosts" }}</p>{{ end }}
+{{ partial "pager.html" $pager }}
+{{ end }}

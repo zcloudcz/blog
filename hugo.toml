@@ -1,0 +1,54 @@
+baseURL = "https://blog.zcloud.cz/"
+title = "zcloud.cz blog"
+defaultContentLanguage = "cs"
+defaultContentLanguageInSubdir = false
+enableRobotsTXT = true
+capitalizeListTitles = false
+# Posts dated in the future stay unpublished until a scheduled build picks them up.
+buildFuture = false
+buildDrafts = false
+
+[pagination]
+  pagerSize = 10
+
+[taxonomies]
+  tag = "tags"
+
+[params]
+  author = "Martin Zahálka"
+  email = "martin@zcloud.cz"
+  mainSite = "https://zcloud.cz"
+  defaultImage = "https://zcloud.cz/og-image.png"
+
+[languages]
+  [languages.cs]
+    label = "Čeština"
+    locale = "cs-CZ"
+    weight = 1
+    title = "zcloud.cz blog"
+    [languages.cs.params]
+      description = "Zkušenosti z vývoje software, AI agentů, .NET a Azure. Píše Martin Zahálka, zcloud.cz."
+      locale = "cs_CZ"
+  [languages.en]
+    label = "English"
+    locale = "en-US"
+    weight = 2
+    title = "zcloud.cz blog"
+    [languages.en.params]
+      description = "Notes from building software, AI agents, .NET and Azure. Written by Martin Zahálka, zcloud.cz."
+      locale = "en_US"
+
+[markup.goldmark.renderer]
+  unsafe = false
+[markup.highlight]
+  noClasses = false
+  style = "github"
+
+[outputs]
+  home = ["HTML", "RSS"]
+  section = ["HTML", "RSS"]
+  taxonomy = ["HTML"]
+  term = ["HTML"]
+
+[sitemap]
+  changeFreq = "weekly"

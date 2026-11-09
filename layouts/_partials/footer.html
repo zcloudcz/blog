@@ -1,0 +1,9 @@
+<footer class="site-footer">
+  <div class="wrap">
+    <p>
+      &copy; {{ now.Year }} <a href="{{ site.Params.mainSite }}{{ if eq site.Language.Lang "en" }}/en/{{ end }}">zcloud.cz</a>, {{ site.Params.author }}
+      · <a href="mailto:{{ site.Params.email }}">{{ site.Params.email }}</a>
+      {{- with site.Home.OutputFormats.Get "rss" }} · <a href="{{ .RelPermalink }}">{{ i18n "rss" }}</a>{{ end }}
+    </p>
+  </div>
+</footer>

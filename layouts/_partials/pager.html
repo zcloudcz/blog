@@ -1,0 +1,8 @@
+{{- $pager := . -}}
+{{- if gt $pager.TotalPages 1 }}
+<nav class="pager" aria-label="pagination">
+  {{- if $pager.HasPrev }}<a rel="prev" href="{{ $pager.Prev.URL }}">&larr; {{ i18n "newer" }}</a>{{ else }}<span></span>{{ end }}
+  <span class="pager-pos">{{ i18n "page" }} {{ $pager.PageNumber }} {{ i18n "of" }} {{ $pager.TotalPages }}</span>
+  {{- if $pager.HasNext }}<a rel="next" href="{{ $pager.Next.URL }}">{{ i18n "older" }} &rarr;</a>{{ else }}<span></span>{{ end }}
+</nav>
+{{- end }}

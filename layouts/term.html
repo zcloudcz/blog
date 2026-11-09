@@ -1,0 +1,6 @@
+{{ define "main" }}
+<h1 class="list-title"><span class="muted">{{ i18n "taggedWith" }}:</span> #{{ .Title }}</h1>
+{{- $pager := .Paginate .Pages -}}
+{{- range $pager.Pages }}{{ partial "card.html" . }}{{ end }}
+{{ partial "pager.html" $pager }}
+{{ end }}

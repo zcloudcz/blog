@@ -1,0 +1,10 @@
+{{ define "main" }}
+<section class="intro">
+  <h1>{{ site.Title }}</h1>
+  <p>{{ site.Params.description }}</p>
+</section>
+{{- $posts := where site.RegularPages "Section" "posts" -}}
+{{- $pager := .Paginate $posts -}}
+{{- range $pager.Pages }}{{ partial "card.html" . }}{{ else }}<p class="empty">{{ i18n "noPosts" }}</p>{{ end }}
+{{ partial "pager.html" $pager }}
+{{ end }}
