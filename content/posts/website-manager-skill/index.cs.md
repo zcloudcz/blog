@@ -8,6 +8,11 @@ tags:
   - automation
   - mcp
 linkedin: "https://cz.linkedin.com/posts/martin-zahalka_ai-agents-github-activity-7504116636375998465-zbY0"
+image: cover.png
+icon: globe
+icons:
+  - workflow
+  - bot
 ---
 
 Nedělám weby. Nejsem grafik. SEO mě nebaví. A navíc jsem líný.
@@ -48,5 +53,3 @@ A lokální skill se postará o zbytek. GitHub. Wedos. Google.
 Čím dál víc mě baví myšlenka, že místo stavění dalšího UI stačí některé věci prostě zpřístupnit agentovi jako skill nebo MCP.
 
 Admin rozhraní je potřeba navrhnout, napsat, hostovat a udržovat. Skill je popis postupu plus pár nástrojů, které agent umí zavolat. Pro věci, které dělám párkrát do roka a nechci si pamatovat, kde se co nastavuje, je to přesně ta správná míra investice.
-
-*Původně vyšlo na [LinkedInu](https://cz.linkedin.com/posts/martin-zahalka_ai-agents-github-activity-7504116636375998465-zbY0).*

@@ -7,6 +7,11 @@ tags:
   - agentwall
   - ai-agents
 linkedin: "https://cz.linkedin.com/posts/martin-zahalka_agentwall-ai-agent-navrhuje-agentwall-rozhoduje-activity-7511383316256923649-6ajo"
+image: cover.png
+icon: lock-keyhole
+icons:
+  - shield-check
+  - bot
 ---
 
 Poslouchal jsem poslední podcast Petra Ludwiga, který namluvila jeho AI Lana. A znovu mě to utvrdilo v tom, že AgentWall má smysl a kontrola oprávnění AI agentů bude nutnost.
@@ -35,5 +40,3 @@ Moje heslo pro AgentWall je jednoduché: AI agent navrhuje, AgentWall rozhoduje.
 Agent potřebuje upravit kód. Nemusí přitom mít přístup k vašim SSH klíčům.
 
 To je celé. Ne „věřím, že je nepoužije“, ale „nemá je k dispozici“.
-
-*Původně vyšlo na [LinkedInu](https://cz.linkedin.com/posts/martin-zahalka_agentwall-ai-agent-navrhuje-agentwall-rozhoduje-activity-7511383316256923649-6ajo).*

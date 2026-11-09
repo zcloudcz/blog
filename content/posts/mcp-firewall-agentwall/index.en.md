@@ -8,6 +8,11 @@ tags:
   - agentwall
   - ai-agents
 linkedin: "https://cz.linkedin.com/posts/martin-zahalka_aiagents-aisecurity-mcp-activity-7507696043480731648-aQZp"
+image: cover.png
+icon: shield-check
+icons:
+  - lock-keyhole
+  - bot
 ---
 
 Everyone is talking about AI agent security. My approach is an MCP firewall: [AgentWall](https://agentwall.cz).
@@ -38,5 +43,3 @@ A firewall is not enough if there is an open road right next to it. The direct r
 AgentWall does not build its own sandbox, though. It plugs into the sandbox the client already has (Claude Code `/sandbox`, the Codex sandbox or Docker Sandboxes) and puts two enforcement points on the single way out: an MCP gateway for tools and an egress proxy for the network. The egress proxy also blocks private and internal addresses after DNS resolution, so the agent cannot reach the internal network even through an allowed domain.
 
 **Agent security starts where "you must not" means "you don't have permission".**
-
-*Originally posted on [LinkedIn](https://cz.linkedin.com/posts/martin-zahalka_aiagents-aisecurity-mcp-activity-7507696043480731648-aQZp) (in Czech).*

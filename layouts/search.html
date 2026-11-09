@@ -1,5 +1,6 @@
 {{ define "main" }}
-<h1 class="list-title">{{ .Title }}</h1>
+<div class="wrap">
+<div class="list-head"><h1>{{ .Title }}</h1></div>
 <div id="search" class="search"></div>
 <noscript><p>JavaScript is required for search.</p></noscript>
 <link href="/pagefind/pagefind-ui.css" rel="stylesheet">
@@ -18,4 +19,5 @@
     if (q) ui.triggerSearch(q);
   });
 </script>
+</div>
 {{ end }}

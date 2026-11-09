@@ -7,6 +7,11 @@ tags:
   - code-review
   - llm
 linkedin: "https://cz.linkedin.com/posts/martin-zahalka_m%C5%AFj-ai-developer-nesm%C3%AD-mergnout-nic-co-mu-activity-7495003995686752256-4WtZ"
+image: cover.png
+icon: git-pull-request-arrow
+icons:
+  - bot
+  - scale
 ---
 
 My AI developer is not allowed to merge anything that hasn't been approved by an AI from a competing company.
@@ -44,5 +49,3 @@ It is the same thing that works in human teams. The author of the code is not th
 ## What about you?
 
 Do you use cross-model review? Or do you let AI check itself? And if you're further along, what do you do differently?
-
-*Originally posted on [LinkedIn](https://cz.linkedin.com/posts/martin-zahalka_m%C5%AFj-ai-developer-nesm%C3%AD-mergnout-nic-co-mu-activity-7495003995686752256-4WtZ) (in Czech).*

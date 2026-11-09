@@ -7,6 +7,11 @@ tags:
   - code-review
   - automation
 linkedin: "https://cz.linkedin.com/posts/martin-zahalka_ai-agent-mi-opravil-bug-tak-%C5%BEe-ho-schoval-activity-7501187417308299264-0vab"
+image: cover.png
+icon: bug
+icons:
+  - git-pull-request-arrow
+  - bot
 ---
 
 My AI agent "fixed" a bug by hiding it.
@@ -56,5 +61,3 @@ That is exactly why I don't want an agent to just "review its own work" and mark
 A separate reviewer asks a different question. Not "did the symptom go away?" but "was the cause fixed?". And when two agents disagree, the answer comes from a test, not a vote.
 
 What are the most interesting bugs your agents have produced?
-
-*Originally posted on [LinkedIn](https://cz.linkedin.com/posts/martin-zahalka_ai-agent-mi-opravil-bug-tak-%C5%BEe-ho-schoval-activity-7501187417308299264-0vab) (in Czech).*

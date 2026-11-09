@@ -7,6 +7,11 @@ tags:
   - open-source
   - ai-agents
 linkedin: "https://cz.linkedin.com/posts/martin-zahalka_github-zcloudczzmapper-high-performance-activity-7496113904885014529-pSj-"
+image: cover.png
+icon: code-xml
+icons:
+  - workflow
+  - sparkles
 ---
 
 In the winter of 2025/26 I wrote another .NET mapper.
@@ -64,5 +69,3 @@ ZMapper is out and it's open source. Maybe for the software museum. 👇
 - NuGet: [nuget.org/packages/ZMapper](https://www.nuget.org/packages/ZMapper)
 
 Do you still use mappers in the age of AI coding agents?
-
-*Originally posted on [LinkedIn](https://cz.linkedin.com/posts/martin-zahalka_github-zcloudczzmapper-high-performance-activity-7496113904885014529-pSj-) (in Czech).*

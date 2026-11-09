@@ -7,6 +7,11 @@ tags:
   - web
   - open-source
 linkedin: "https://cz.linkedin.com/posts/martin-zahalka_pdfjoin-slou%C4%8Den%C3%AD-pdf-activity-7497925802747924498-aiez"
+image: cover.png
+icon: file-stack
+icons:
+  - lock-keyhole
+  - globe
 ---
 
 Potřebujete rychle spojit pár PDF nebo obrázků do jednoho PDF, znáte to?
@@ -43,5 +48,3 @@ Jedna drobnost z vývoje, která se může hodit každému, kdo renderuje PDF p�
 ## Vyzkoušejte
 
 [pdf.zcloud.cz](https://pdf.zcloud.cz), třeba se bude hodit. 🙂 Zpětná vazba vítána.
-
-*Původně vyšlo na [LinkedInu](https://cz.linkedin.com/posts/martin-zahalka_pdfjoin-slou%C4%8Den%C3%AD-pdf-activity-7497925802747924498-aiez).*

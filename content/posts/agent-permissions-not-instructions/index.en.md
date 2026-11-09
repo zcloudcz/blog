@@ -7,6 +7,11 @@ tags:
   - agentwall
   - ai-agents
 linkedin: "https://cz.linkedin.com/posts/martin-zahalka_agentwall-ai-agent-navrhuje-agentwall-rozhoduje-activity-7511383316256923649-6ajo"
+image: cover.png
+icon: lock-keyhole
+icons:
+  - shield-check
+  - bot
 ---
 
 I was listening to the latest podcast from Petr Ludwig, voiced by his AI, Lana. And it confirmed once again that AgentWall makes sense and that controlling AI agent permissions is going to be a necessity.
@@ -35,5 +40,3 @@ My motto for AgentWall is simple: the AI agent proposes, AgentWall decides.
 An agent needs to change some code. It does not need access to your SSH keys to do that.
 
 That's it. Not "I trust it won't use them", but "it doesn't have them".
-
-*Originally posted on [LinkedIn](https://cz.linkedin.com/posts/martin-zahalka_agentwall-ai-agent-navrhuje-agentwall-rozhoduje-activity-7511383316256923649-6ajo) (in Czech).*

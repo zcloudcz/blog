@@ -7,6 +7,11 @@ tags:
   - fakvio
   - dotnet
 linkedin: "https://cz.linkedin.com/posts/martin-zahalka_vyv%C3%ADj%C3%ADm-faktura%C4%8Dn%C3%AD-aplikaci-s%C3%A1m-s-t%C3%BDmem-activity-7492565774813954048-djFq"
+image: cover.png
+icon: receipt-text
+icons:
+  - kanban
+  - bot
 ---
 
 I'm building an invoicing app. Alone. With a team.
@@ -54,5 +59,3 @@ AI agents are not magic. They work exactly as well as the specs you give them. A
 It's management, not programming.
 
 How about you? What does your AI workflow look like?
-
-*Originally posted on [LinkedIn](https://cz.linkedin.com/posts/martin-zahalka_vyv%C3%ADj%C3%ADm-faktura%C4%8Dn%C3%AD-aplikaci-s%C3%A1m-s-t%C3%BDmem-activity-7492565774813954048-djFq) (in Czech).*

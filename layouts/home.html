@@ -1,10 +1,25 @@
 {{ define "main" }}
-<section class="intro">
-  <h1>{{ site.Title }}</h1>
-  <p>{{ site.Params.description }}</p>
-</section>
-{{- $posts := where site.RegularPages "Section" "posts" -}}
-{{- $pager := .Paginate $posts -}}
-{{- range $pager.Pages }}{{ partial "card.html" . }}{{ else }}<p class="empty">{{ i18n "noPosts" }}</p>{{ end }}
-{{ partial "pager.html" $pager }}
+<div class="wrap">
+  {{- $posts := where site.RegularPages "Section" "posts" -}}
+  {{- $pager := .Paginate $posts -}}
+  {{- if eq $pager.PageNumber 1 }}
+  <section class="intro">
+    <span class="eyebrow">{{ i18n "blogIntro" }}</span>
+    <h1>{{ site.Params.headline }}</h1>
+    <p>{{ site.Params.description }}</p>
+  </section>
+  {{- else }}
+  <div class="list-head"><h1>{{ i18n "posts" }} <span class="muted">· {{ i18n "page" }} {{ $pager.PageNumber }}</span></h1></div>
+  {{- end }}
+  {{- $items := $pager.Pages -}}
+  {{- if and (eq $pager.PageNumber 1) (gt (len $items) 0) }}
+    {{ partial "card.html" (dict "page" (index $items 0) "featured" true) }}
+    {{- $items = after 1 $items -}}
+  {{- end }}
+  <div class="grid">
+    {{- range $items }}{{ partial "card.html" (dict "page" .) }}{{ end }}
+  </div>
+  {{- if not $pager.Pages }}<p class="empty">{{ i18n "noPosts" }}</p>{{ end }}
+  {{ partial "pager.html" $pager }}
+</div>
 {{ end }}

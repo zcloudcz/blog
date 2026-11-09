@@ -7,6 +7,11 @@ tags:
   - fakvio
   - dotnet
 linkedin: "https://cz.linkedin.com/posts/martin-zahalka_vyv%C3%ADj%C3%ADm-faktura%C4%8Dn%C3%AD-aplikaci-s%C3%A1m-s-t%C3%BDmem-activity-7492565774813954048-djFq"
+image: cover.png
+icon: receipt-text
+icons:
+  - kanban
+  - bot
 ---
 
 Vyvíjím fakturační aplikaci. Sám. S týmem.
@@ -54,5 +59,3 @@ AI agenti nejsou magie. Fungují přesně tak dobře, jak dobrá jsou zadání. 
 Je to management, ne programování.
 
 A jak pracujete vy? Jaké máte AI workflow?
-
-*Původně vyšlo na [LinkedInu](https://cz.linkedin.com/posts/martin-zahalka_vyv%C3%ADj%C3%ADm-faktura%C4%8Dn%C3%AD-aplikaci-s%C3%A1m-s-t%C3%BDmem-activity-7492565774813954048-djFq).*

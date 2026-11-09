@@ -1,6 +1,12 @@
-<article class="card">
-  <h2 class="card-title"><a href="{{ .RelPermalink }}">{{ .Title }}</a></h2>
-  {{ partial "meta.html" . }}
-  <p class="card-summary">{{ .Description | default .Summary | plainify | truncate 260 }}</p>
-  <a class="more" href="{{ .RelPermalink }}">{{ i18n "readMore" }} &rarr;</a>
-</article>
+{{- $featured := .featured -}}
+{{- with .page -}}
+<a class="{{ if $featured }}featured{{ else }}card{{ end }}" href="{{ .RelPermalink }}">
+  <div class="thumb">{{ partial "cover.html" (dict "page" . "eager" $featured "sizes" (cond $featured "(max-width: 860px) 100vw, 620px" "(max-width: 760px) 100vw, 540px")) }}</div>
+  <div class="card-body">
+    {{- with first 1 (.GetTerms "tags") }}<div class="pills">{{ range . }}<span class="pill">{{ .LinkTitle }}</span>{{ end }}</div>{{ end }}
+    <h2>{{ .Title }}</h2>
+    <p class="excerpt">{{ .Description | default .Summary | plainify }}</p>
+    {{ partial "meta.html" . }}
+  </div>
+</a>
+{{- end -}}

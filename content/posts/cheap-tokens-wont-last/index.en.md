@@ -7,6 +7,11 @@ tags:
   - costs
   - ai-agents
 linkedin: "https://cz.linkedin.com/posts/martin-zahalka_ai-deepseek-llm-activity-7495743915434790912-5AE5"
+image: cover.png
+icon: coins
+icons:
+  - brain-circuit
+  - bot
 ---
 
 I pay less for AI development than I do for coffee. That can't last. ☕
@@ -56,5 +61,3 @@ So the price war has clearly begun. The question is whether that will be enough.
 Because even though tokens are getting cheaper right now, it's far from certain that current prices are sustainable. A workflow that assumes the strongest model is cheap enough for everything is a bet on one particular pricing policy. A workflow built on small tasks and checks at every step works with expensive and cheap models alike.
 
 Are you building your AI workflow on the assumption that tokens stay cheap?
-
-*Originally posted on [LinkedIn](https://cz.linkedin.com/posts/martin-zahalka_ai-deepseek-llm-activity-7495743915434790912-5AE5) (in Czech).*

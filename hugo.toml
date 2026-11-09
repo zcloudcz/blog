@@ -19,6 +19,7 @@ buildDrafts = false
   email = "martin@zcloud.cz"
   mainSite = "https://zcloud.cz"
   defaultImage = "https://zcloud.cz/og-image.png"
+  linkedin = "https://www.linkedin.com/in/martin-zahalka/"
 
 [languages]
   [languages.cs]
@@ -27,6 +28,7 @@ buildDrafts = false
     weight = 1
     title = "zcloud.cz blog"
     [languages.cs.params]
+      headline = "Software, AI agenti a co z toho funguje v praxi"
       description = "Zkušenosti z vývoje software, AI agentů, .NET a Azure. Píše Martin Zahálka, zcloud.cz."
       locale = "cs_CZ"
   [languages.en]
@@ -35,6 +37,7 @@ buildDrafts = false
     weight = 2
     title = "zcloud.cz blog"
     [languages.en.params]
+      headline = "Software, AI agents and what actually works in practice"
       description = "Notes from building software, AI agents, .NET and Azure. Written by Martin Zahálka, zcloud.cz."
       locale = "en_US"
 
@@ -52,3 +55,19 @@ buildDrafts = false
 
 [sitemap]
   changeFreq = "weekly"
+
+[related]
+  includeNewer = true
+  threshold = 20
+  toLower = true
+  [[related.indices]]
+    name = "tags"
+    weight = 100
+  [[related.indices]]
+    name = "date"
+    weight = 10
+
+[imaging]
+  resampleFilter = "Lanczos"
+  [imaging.webp]
+    quality = 82
