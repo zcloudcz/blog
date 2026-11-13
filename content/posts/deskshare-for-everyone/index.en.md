@@ -1,50 +1,43 @@
 ---
-title: "Nobody knows what Server Mode means"
+title: "DeskShare: remote help with a computer on every system"
 date: 2026-11-19T08:00:00+01:00
-description: "DeskShare froze on Linux because it was waiting for itself. And a normal person would not know what Server Mode is. How we fixed both in one day."
+description: "Instead of TeamViewer on one machine and VNC on another: one app for Windows, macOS and Linux, the helper just uses a browser. Free, open source, mobile coming."
 tags:
   - deskshare
   - open-source
-  - ai-agents
-  - ux
+  - webrtc
 image: cover.png
 icon: monitor-smartphone
 icons:
-  - languages
-  - shield-check
+  - laptop
+  - smartphone
 ---
 
-DeskShare is my open source remote desktop app: one app for Windows, macOS and Linux plus a browser viewer, instead of VNC on one machine and TeamViewer on another. Recently I found out that it did not really work on Linux, and that most of the people it is meant for could not use it anyway.
+When I help someone with their computer remotely, the first question is often how to connect at all. TeamViewer on Windows, VNC with port forwarding on Linux, something else again on a Mac. Meanwhile the person on the phone is looking for the right button. That is why I wrote DeskShare.
 
-## An app waiting for itself
+## The problem: every system is different
 
-On Linux the server registered, showed the number and the code, and then the window froze. The code on screen stopped changing, so the person reading it over the phone was dictating a code that had expired long ago. The other side got "Invalid passkey".
+Remote desktop tools either do not run everywhere, or they want you to set up networks, accounts and licences. For the helper that is annoying. For the person who needs help it is often where it ends: they install something, cannot describe what they see, and give up.
 
-My development AI agent looked at the frozen process with `dotnet-stack`, and within a few minutes it was clear. Starting the server ran on the UI thread. A short-lived probe capturer blocked while closing, because it was waiting for FFmpeg, and FFmpeg needed exactly the thread that was waiting for it to finish. A textbook deadlock. The code rotation then got stuck trying to update the frozen window.
+I wanted one thing that works the same on every system, needs no account and no open ports, and can be started by someone who is not comfortable with computers.
 
-The `FFmpeg error: End of file` message that first sent us hunting in screen capture was a red herring. It only reported that the probe had been closed.
+## How DeskShare works
 
-The fix was a few lines: start-up runs off the UI thread and the window updates without blocking. Plus two tests that fail on the old version. It shipped in version 1.6.4.
+- **The person who needs help** downloads DeskShare for Windows, macOS (Apple Silicon and Intel) or Linux and clicks **I need help**. The app shows their number and a code to read out over the phone.
+- **The helper** does not have to install anything. They open a browser, enter the number and code and see the screen. The desktop app works too.
+- **Mouse and keyboard control** is a separate permission. The helper asks for it, and the person at the computer has to click Allow, for every connection. Without an answer the request is denied after 30 seconds.
+- **The code changes every minute**, so an old code is useless. Before sharing, the app warns: did someone call you unexpectedly? Do not share anything.
 
-## Server Mode, Client Mode, Passkey
+The picture goes over WebRTC directly between the computers, encrypted and with low latency. When a direct connection is not possible, a relay server helps. For companies there is an MSI installer configurable through policies and unattended access with a permanent password.
 
-While testing, the second problem became obvious. The app talked like a developer: Server Mode, Client Mode, Server ID, Passkey, Start Server. But DeskShare is mostly started by someone whose son or IT person just said "let me look at your computer". That person does not know if they are a server or a client. They know they need help.
+The app, the web viewer and the website speak 17 languages and pick the language from the system. AI agents did most of the work on the translations and on wording for everyday users; native speakers still have to review them.
 
-The agent and Codex went through how Windows Quick Assist, Chrome Remote Desktop, AnyDesk and RustDesk handle this and came back with a proposal and mockups. I approved it almost as is:
+## Mobile is on its way
 
-- The home screen has two big choices: **I need help** and **Help someone**.
-- Server ID became **Your number** and Passkey became **Code**, both large and grouped in threes so they are easy to read out over the phone.
-- Before sharing, a plain warning: did someone call you unexpectedly? Do not share anything.
-- Mouse and keyboard control is a separate permission for every connection, and the request is denied automatically after 30 seconds without an answer.
-- The code is now valid for 60 seconds instead of 45. Those 15 seconds matter when you are dictating it to someone.
-- The app, the web viewer and the website speak 17 languages and pick the language from the system or the browser.
+The Flutter mobile app is done in code and passes its tests, but it is not in the stores yet. On Android it does both: connect to a computer and help from your phone, or share the phone screen and get help with it. Remote control of the phone will only be in the version outside Google Play, because Play has strict rules for that kind of app. On iPhone it can only help for now, because iOS allows screen sharing only through a special extension and Apple does not allow remote control of an iPhone at all. It is now waiting for signing and the Google Play and TestFlight setup.
 
-Three agents worked on the desktop app, the web viewer and the website at the same time, each on its own branch. Then I clicked through the whole flow myself: sharing, connecting, asking for control, allowing it and stopping. The brief went out in the evening and version 1.7.0 was ready to download in the morning.
+## What it gives me
 
-## What I take from it
+All it takes is a link to [deskshare.zcloud.cz](https://deskshare.zcloud.cz/en/). The other side clicks I need help and I connect from a browser on whatever device I have at hand. I do not have to care what system or licence anyone has.
 
-The translations were made by AI and no native speaker has checked them yet. I would never have tried Arabic or Japanese without agents, so for me it is a good start that I will polish with feedback.
-
-The biggest win was not the code. The agent noticed that "Server Mode" means nothing to a normal person. I saw that label in the app every day and had stopped noticing it.
-
-DeskShare is free at [deskshare.zcloud.cz](https://deskshare.zcloud.cz/en/) and the source is on [GitHub](https://github.com/zcloudcz/DeskShare).
+DeskShare is free and the source code is on [GitHub](https://github.com/zcloudcz/DeskShare). If something breaks, tell me in the [issues](https://github.com/zcloudcz/DeskShare/issues).
