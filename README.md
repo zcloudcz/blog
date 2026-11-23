@@ -52,6 +52,19 @@ A future `date` = scheduled post: merged now, published by the daily build on th
 
 Editorial workflow for the AI agent (topics, approval, LinkedIn): see `editorial/WRITING-GUIDE.md`, `editorial/backlog.md` and `editorial/linkedin-plan.md`.
 
+## GEO a SEO (povinné)
+
+Blog musí být čitelný pro vyhledávače i AI asistenty (ChatGPT, Claude, Perplexity, Google AI). Tyto věci se nesmí rozbít, kontroluj je po každé změně šablon:
+
+- `<html lang>` podle jazyka (`cs-CZ`, `en-US`), viz `layouts/baseof.html`.
+- Každá stránka má `<meta name="description">` (popis článku, jinak shrnutí, jinak `params.description` jazyka) a `<link rel="canonical">`, viz `layouts/_partials/head.html`.
+- JSON-LD v `layouts/_partials/jsonld.html`: úvodní stránka `WebSite` + `Blog` + `Person` (Martin Zahálka) + `Organization` (ZCLOUD, https://zcloud.cz/, IČO 07783809, Boskovice, CZ); článek `BlogPosting` (headline, datePublished, dateModified, author, publisher, inLanguage, url, description). Skládej jen přes `dict` + `jsonify`, nikdy ručně psaný JSON.
+- `llms.txt` generuje Hugo pro každý jazyk (`/llms.txt`, `/en/llms.txt`, šablona `layouts/home.llms.txt`, výstupní formát `llms` v `hugo.toml`). Obsahuje název, shrnutí blogu a seznam všech článků s odkazem a popisem. Nový článek se tam objeví sám, stačí vyplněný `description`.
+- `robots.txt` (`layouts/robots.txt`) odkazuje na `sitemap.xml` a nesmí blokovat AI crawlery (GPTBot, OAI-SearchBot, ClaudeBot, PerplexityBot, Google-Extended).
+- Žádná dlouhá pomlčka (U+2014) v šablonách ani ve vygenerovaném HTML, XML a TXT (hlídá CI).
+
+Rychlá kontrola po buildu: `public/index.html` a `public/en/index.html` mají `lang`, description, canonical a JSON-LD, který projde `json.loads`; existují `public/llms.txt`, `public/en/llms.txt` a `public/robots.txt` se `Sitemap:`.
+
 ## Cover images
 
 Every post needs `cover.png` (1200x630). Generate it from the post tags/icons:

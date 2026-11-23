@@ -37,21 +37,7 @@
 {{- range .Params.tags }}
 <meta property="article:tag" content="{{ . }}">
 {{- end }}
-<script type="application/ld+json">
-{{- dict
-  "@context" "https://schema.org"
-  "@type" "BlogPosting"
-  "headline" .Title
-  "description" $desc
-  "datePublished" (.Date.Format "2006-01-02T15:04:05Z07:00")
-  "dateModified" (.Lastmod.Format "2006-01-02T15:04:05Z07:00")
-  "inLanguage" .Language.Lang
-  "url" .Permalink
-  "image" $image
-  "author" (dict "@type" "Person" "@id" "https://zahalka.dev/#person" "name" site.Params.author)
-  "publisher" (dict "@id" "https://zcloud.cz/#organization" "@type" "Organization" "name" "zcloud.cz")
-  | jsonify | safeJS }}
-</script>
 {{- end }}
+{{ partial "jsonld.html" (dict "page" . "desc" $desc "image" $image) }}
 {{- $css := resources.Get "main.css" | minify | fingerprint }}
 <link rel="stylesheet" href="{{ $css.RelPermalink }}" integrity="{{ $css.Data.Integrity }}">
