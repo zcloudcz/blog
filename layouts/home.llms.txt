@@ -1,0 +1,22 @@
+{{- /* llms.txt (https://llmstxt.org): plain-text map of the blog for AI assistants. */ -}}
+{{- $posts := where site.RegularPages "Section" "posts" -}}
+# {{ site.Title }}
+
+> {{ site.Params.headline }}. {{ site.Params.description }}
+
+{{ i18n "llmsAbout" }}
+
+## {{ i18n "posts" }}
+
+{{ range $posts -}}
+{{- $d := .Description | default .Summary | plainify | htmlUnescape | replaceRE `\s+` " " | strings.TrimSpace | truncate 200 | htmlUnescape -}}
+- [{{ .Title }}]({{ .Permalink }}): {{ $d }}
+{{ end }}
+## {{ i18n "llmsMore" }}
+
+- [{{ i18n "llmsHome" }}]({{ with site.Home.OutputFormats.Get "html" }}{{ .Permalink }}{{ end }})
+- [RSS]({{ with site.Home.OutputFormats.Get "rss" }}{{ .Permalink }}{{ end }})
+{{- range site.Home.Translations }}
+- [{{ .Language.Label }}: llms.txt]({{ with .OutputFormats.Get "llms" }}{{ .Permalink }}{{ end }})
+{{- end }}
+- [ZCLOUD](https://zcloud.cz/)
